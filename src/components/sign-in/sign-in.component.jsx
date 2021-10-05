@@ -1,6 +1,7 @@
 import React from "react";
+import { signInWithGoogle } from "../../firbase/firbase.utile";
 
-import "./sing-in.style.scss";
+import "./sign-in.style.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 class SignIn extends React.Component {
@@ -44,7 +45,12 @@ class SignIn extends React.Component {
             label="password"
             required
           />
-          <CustomButton type="submit">Sign in</CustomButton>
+          <div className="button">
+            <CustomButton type="submit">Sign in</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              Sign in with Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
